@@ -1,6 +1,9 @@
 # react-karma-babel-webpack-code-coverage
 Supplement to blog post about setting up testing on React with Karma, Babel, and Webpack with code coverage plugin.
 
+`karma.conf.js`
+
+
 ```
 var webpack = require('webpack');
 
@@ -41,4 +44,11 @@ module.exports = function (config) {
     }
   });
 };
+```
+
+`tests.webpack.js`
+
+```
+var context = require.context('./src', true, /-test\.js$/); //make sure you have your directory and regex test set correctly!
+context.keys().forEach(context);
 ```
